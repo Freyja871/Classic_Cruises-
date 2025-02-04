@@ -1,0 +1,649 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: darkturquoise;
+    margin: 0;
+    height: 100%;
+    background-color: #000000;
+}
+#collage{
+    display: flex;
+    margin: auto;
+    align-self: center;
+    max-width: 1000px;
+    max-height: 500px;
+    width: 1000px;
+    height: 1000px;
+    padding-left: 10%;
+    padding-right: 15%;
+    width: 100%;
+    background-image: url(https://img.freepik.com/premium-photo/dim-room-establishment-inquisitively-with-incline-cleanse-room-studio-creative-resource-ai-generated_581634-9156.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#collage1 img{
+    width: 175px;
+    height: 170px;
+    padding: 20px;
+}
+#collage1 img:hover{
+    width: 180px;
+    height: 175px;
+    border-radius: 3px;
+    border-color: #b8ebda;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2em;}
+h3{ font-size: 2em;}
+p{ line-height: 1.6em; font-size: 
+large;text-align: justify; }
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+button{
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: rgb(0, 0, 0);
+    background-color: rgb(220, 20, 60);
+}
+
+button:hover{
+    background-color: rgb(139, 69, 19);
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.color-acento{ color:#b053b6; }
+
+header{
+    background-color: #301b35;
+    
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header .container-logo{
+    margin-top: 1vw;
+    margin-bottom: 2px;
+    padding-right: 50%;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+header nav a{
+    align-self: flex-end;
+    padding: 5px 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 100%;
+    color: rgb(124, 46, 14);
+    border-bottom: 5px solid transparent;
+}
+
+header a:hover{
+    color: rgb(177, 141, 42);
+    font-size: 150%;
+    border-bottom: 5px solid #000000;
+}
+header a:hover ~ .container-logo{
+    border-bottom: 5px solid transparent;
+    
+}
+
+/*Menú lateral*/
+#lateral .btn-menu{
+    align-items: center;
+}
+#btn-menu{
+    display: none;
+  }
+#label-menu{
+    font-size: 300%;
+    color: #b8ebda;
+    padding-left: 70%;
+    align-self: center;
+  }
+#label-lateral{
+    font-size: 200%;
+    color: rgb(231, 12, 12);
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    cursor: pointer;
+}
+label:hover{
+    color: #7611d4;
+}
+#lateral{
+    background-color: black;
+}
+.container-menu {
+    position: fixed; /* Para que se quede fijo en la pantalla */
+    top: 0;
+    right: 0;
+    width: 250px; /* Ajusta el tamaño del menú */
+    height: 100%; /* Se extiende a toda la altura */
+    background-color: #333; /* Fondo oscuro para el menú */
+    z-index: 1000;
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical */
+    display: none; /* Menú oculto por defecto */
+    transition: transform 0.3s ease; /* Efecto de deslizamiento */
+}
+
+/* Estilo para el menú cuando el checkbox está marcado */
+input[type="checkbox"]:checked ~ .container-menu {
+    display: block; /* Muestra el menú cuando el checkbox está marcado */
+    transform: translateX(0); /* Desliza el menú desde el lado derecho */
+}
+
+/* Estilos para el contenido del menú */
+.cont-menu {
+    padding: 20px;
+}
+
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/* Estilo para el botón de cerrar */
+#label-lateral {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos opcionales para la barra de desplazamiento */
+.container-menu::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.container-menu::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del "pulgar" (parte que se mueve) */
+    border-radius: 10px;
+}
+
+.container-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color del "pulgar" al pasar el mouse */
+}
+
+/* Opcionalmente, el fondo del menú lateral puede ser más opaco si lo deseas */
+.container-menu {
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo con algo de transparencia */
+}
+
+/* Cuando el menú está abierto, podemos hacer que el fondo se oscurezca ligeramente */
+input[type="checkbox"]:checked ~ .capa {
+    background-color: rgb(0, 0, 0); /* Fondo oscuro detrás del menú lateral */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+#label-lateral {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+  .container-menu{
+    position: fixed;
+    background: rgba(5, 66, 82, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical */
+    display: none; /* Menú oculto por defecto */
+  }
+  #btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+  }
+  .cont-menu{
+    width: 100%;
+    max-width: 18%;
+    background: rgba(51, 49, 48, 0.997);
+    height: 100%;
+    position: fixed;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+  }
+  #btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+  }
+  .cont-menu nav{
+    transform: translateY(15%);
+  }
+  .cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 15%;
+    color: #ffffff;
+    font-size:60%;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+  }
+  .cont-menu nav a:hover{
+    border-left: 5px solid #60859b;
+    background: #000000;
+  }
+/*final del menu lateral*/
+#intr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 700px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.7)
+    )
+    ,url("BG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+#intr h1{
+    color: white;
+}
+#responsable h2{
+    color: #2b569b;
+}
+
+#intr button{
+    font-size: 1.75em;
+}
+
+#somos-proya .container{
+    text-align: center;
+    padding: 160px 12px 0px 12px;
+}
+
+#nuestros-programas{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-programas .container{
+    padding: 150px 12px;
+}
+
+#nuestros-programas h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+#nuestros-programas p{
+    display: none;
+}
+
+#nuestros-programas .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    width: 22%;
+    border-radius: 15px;
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("fa1.jpeg");
+
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("fa1.jpeg");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("fa1.jpeg");
+
+}
+
+#final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(30,30,30);
+    color: white;
+    height: 500px;
+    padding-bottom: 50px;
+}
+
+#final h2{
+    font-size: 9vw;
+}
+
+footer{
+    background-color: rgb(255, 255, 255);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+    font-size: 0.8em;
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+footer a{
+    color: rgb(100,100,100);
+}
+footer a:hover{
+    text-decoration: none;
+}
+
+@media (min-width: 850px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+    #somos-proya .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos-proya .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #somos-proya h2{
+        margin-top: 0px;
+    }
+
+    #somos-proya .img-container{
+        background-image: url("img2.jpeg");
+        background-size: cover;
+        background-position: center center;
+        border-radius: 20px;
+        height: 300px;
+        width: 500px; 
+    }
+ 
+
+ #planeta .container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 160px 12px 150px 12px;
+    }
+
+    #planeta .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #planeta h2{
+        margin-top: 0px;
+    }
+
+    #planeta .img-container{
+        background-image: url("img3.jpeg");
+        background-size: cover;
+        background-position: center center;
+        border-radius: 20px;
+        height: 300px;
+        width: 500px; 
+    }
+
+
+    #lugares .container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 160px 12px 150px 12px;
+    }
+
+    #lugares .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #lugares h2{
+        margin-top: 0px;
+    }
+
+    #lugares .img-container{
+        background-image: url("img4.jpeg");
+        background-size: cover;
+        background-position: center center;
+        border-radius: 20px;
+        height: 300px;
+        width: 500px; 
+    }
+
+
+    #app .container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 160px 12px 150px 12px;
+    }
+
+    #app .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #app h2{
+        margin-top: 0px;
+    }
+
+    #app .img-container{
+        background-image: url("im1.jpeg");
+        background-size: cover;
+        background-position: center center;
+        border-radius: 20px;
+        height: 300px;
+        width: 500px; 
+    }
+    #app .img-container2{
+        background-image: url("img1.jpeg");
+        background-size: cover;
+        background-position: center center;
+        border-radius: 20px;
+        height: 300px;
+        width: 500px; 
+    }
+
+#conta .container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 160px 0px 90px 0px;
+    }
+
+    #conta .texto{
+        width: 100%;
+        max-width: 800px;
+        text-align: initial;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #conta h2{
+        margin-top: 0px;
+        text-align: center;
+    }
+
+    #conta .redes::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    #conta img{
+        float: left;
+        width: 33%;
+        padding: 9%;
+    }
+    #nuestros-programas .programas{
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestros-programas p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #nuestros-programas h2{
+        font-size: 4em;
+    }
+
+    #nuestros-programas h3{
+        margin-top: 0;
+    }
+
+    #nuestros-programas .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50, 50, 50, 1);
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("personas.jpg");
+
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("7tjsl.jpg");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("h3hmss.jpg");
+
+    }
+
+
+    #final h2{
+        font-size: 5em;
+    }
+
+    #final a{
+        font-weight: bold;
+        color: rgb(10, 93, 218);
+        text-decoration: none;
+    }
+
+    #final a:hover{
+        color: rgb(140, 72, 223);
+    }
+
+    footer .container{
+        justify-content: flex-end;
+    }
+}
